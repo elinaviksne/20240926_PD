@@ -7,3 +7,18 @@ a {
     color: black;
     border-width: 10px;
 }
+
+
+.gold-virsraksts {
+    color: gold;
+}
+
+
+.small-heading {
+    color: green;
+}
+
+
+.form-container {
+    padding-top: 20px;
+}
