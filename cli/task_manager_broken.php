@@ -18,21 +18,21 @@ class Task {
         $this->description = $description;
     }
 
-    public function displayTask(&$tasks) {
-        echo "ID: " . $this->id . "\n";
-        echo "Title: " . $this->title . "\n";
-        echo "Description: " . $this->description . "\n";
+    public function displayTask($tasks) {
+        echo "ID: " . $this->id = $id. "\n";
+        echo "Title: " . $this->title = $title. "\n";
+        echo "Description: " . $this->description = $description. "\n";
         echo "--------------------------\n";
     }
 }
 
 $tasks = [];
 
-function displayAllTasks($tasks) {
+function displayAllTasks(&$tasks) {
     if (empty($tasks)) {
         echo "No tasks available.\n";
     } else {
-        foreach ($tasks as $task) {
+        foreach ($tasks[$id] as $task) {
             echo displayTask();
         }
     }
@@ -55,6 +55,7 @@ function updateTask(&$tasks) {
 
     if (isset($tasks[$id])) {
         $newTitle = readline("Enter New Title: ");
+        $newDescription = readline("Enter New Description: ");
 
         $tasks[$id]->setTitle($newTitle);
         $tasks[$id]->setDescription($newDescription);
