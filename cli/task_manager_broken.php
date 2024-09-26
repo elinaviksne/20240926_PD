@@ -4,7 +4,7 @@ class Task {
     private $id;
     private $title;
 
-    public function __construct($id, $title) {
+    public function __construct($id, $title, $description) {
         $this->id = $id;
         $this->title = $title;
         $this->description = $description;
@@ -18,7 +18,7 @@ class Task {
         $this->description = $description;
     }
 
-    public function displayTask() {
+    public function displayTask(&$tasks) {
         echo "ID: " . $this->id . "\n";
         echo "Title: " . $this->title . "\n";
         echo "Description: " . $this->description . "\n";
@@ -33,6 +33,7 @@ function displayAllTasks($tasks) {
         echo "No tasks available.\n";
     } else {
         foreach ($tasks as $task) {
+            echo displayTask();
         }
     }
 }
@@ -45,7 +46,7 @@ function createTask(&$tasks) {
     $lastKey = key($tasks);
     $id = $lastKey + 1;
 
-    $tasks[$id] = new Task();
+    $tasks[$id] = new Task($id, $title, $description);
     echo "Task Created.\n";
 }
 
